@@ -1,24 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import Navbar from "./components/Navbar/Navbar";
+import CommercePlace from "./components/CommercePlace/CommercePlace";
+import Banner from "./components/Banner/Banner";
+import Escalator from "./components/Escalator/Escalator";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex flex-col text-xl min-h-screen font-montserrat">
+      <Navbar />
+      <CommercePlace />
+      <Escalator />
     </div>
   );
 }

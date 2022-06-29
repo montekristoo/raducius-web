@@ -1,13 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url("../public/fonts/Montserrat/static/Montserrat-Bold.ttf");
+}
+
+@font-face {
+    font-family: Staatliches;
+    src: url("../public/fonts/Staatliches/Staatliches-Regular.ttf");
+}
+
+@font-face {
+    font-family: Trispace;
+    src: url("../public/fonts/Trispace/static/Trispace/Trispace-Light.ttf")
+}
+
+@font-face {
+    font-family: Paytone;
+    src: url("../public/fonts/Paytone/PaytoneOne-Regular.ttf")
+}
+
+@font-face {
+    font-family: Meaven;
+    src: url("../public/fonts/Maven_Pro/static/MavenPro-Regular.ttf")
 }
