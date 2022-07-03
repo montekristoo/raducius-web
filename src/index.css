@@ -1,38 +1,141 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
-}
-
-@font-face {
-    font-family: Montserrat;
-    src: url("../public/fonts/Montserrat/static/Montserrat-Bold.ttf");
-}
-
-@font-face {
-    font-family: Staatliches;
-    src: url("../public/fonts/Staatliches/Staatliches-Regular.ttf");
-}
-
-@font-face {
-    font-family: Trispace;
-    src: url("../public/fonts/Trispace/static/Trispace/Trispace-Light.ttf")
-}
-
-@font-face {
-    font-family: Paytone;
-    src: url("../public/fonts/Paytone/PaytoneOne-Regular.ttf")
-}
-
-@font-face {
-    font-family: Meaven;
-    src: url("../public/fonts/Maven_Pro/static/MavenPro-Regular.ttf")
-}
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+    body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    code {
+        font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+    }
+    
+    @font-face {
+        font-family: Montserrat;
+        src: url("../public/fonts/Montserrat/static/Montserrat-Bold.ttf");
+    }
+    
+    @font-face {
+        font-family: Staatliches;
+        src: url("../public/fonts/Staatliches/Staatliches-Regular.ttf");
+    }
+    
+    @font-face {
+        font-family: Trispace;
+        src: url("../public/fonts/Trispace/static/Trispace/Trispace-Light.ttf")
+    }
+    
+    @font-face {
+        font-family: Paytone;
+        src: url("../public/fonts/Paytone/PaytoneOne-Regular.ttf")
+    }
+    
+    @font-face {
+        font-family: Meaven;
+        src: url("../public/fonts/Maven_Pro/static/MavenPro-Regular.ttf")
+    }
+    
+    .text--block::before {
+        content: 'H';
+        display: flex;
+        font-size: 426px;
+        transition: all 0.5s ease;
+        border: 2px solid red;
+        color: #ffc900;
+        -webkit-text-stroke: 2px black;
+    }
+    
+    @keyframes mymove {
+        from {
+            font-size: 426px;
+        }
+        to {
+            font-size: 0px;
+            transform: translateX(-500px)
+        }
+    }
+    
+    .text--block:hover::before {
+        color: transparent;
+        -webkit-text-stroke: 2px transparent;
+        font-size: 0px;
+        animation: mymove 3s infinite;
+    }
+    
+    .content--container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 454px;
+        height: 463px;
+        background-color: #ffc900;
+        transition: all 0.5s ease;
+        color: #ffc900;
+        -webkit-text-stroke: #ffc900;
+    }
+    /* .content--container:hover {
+        color: white
+    } */
+    
+    @keyframes houdini {
+        0% {
+            transform: translateX(300px);
+            visibility: hidden;
+        }
+        100% {
+            font-size: 75px;
+            transform: translateX(0px);
+        }
+    }
+    
+    .star-wars {
+        display: flex;
+        justify-content: flex-start;
+        position: relative;
+        height: 800px;
+        width: 100%;
+        border: 1px solid red;
+        color: #feda4a;
+        font-family: 'Pathway Gothic One', sans-serif;
+        font-size: 500%;
+        font-weight: 600;
+        letter-spacing: 6px;
+        line-height: 150%;
+        perspective: 150px;
+        text-align: justify;
+    }
+    
+    .crawl {
+        position: relative;
+        top: 99999px;
+        transform-origin: 50% 100%;
+        animation: crawl 60s linear;
+    }
+    
+    .crawl .description {
+        position: relative;
+        max-width: 100%;
+    }
+    
+    .crawl>.title {
+        font-size: 90%;
+        text-align: center;
+    }
+    
+    .crawl>.title h1 {
+        margin: 0 0 100px;
+        text-transform: uppercase;
+    }
+    
+    @keyframes crawl {
+        0% {
+            top: 800px;
+            transform: rotateX(20deg) translateZ(0);
+        }
+        100% {
+            top: -6000px;
+            transform: rotateX(25deg) translateZ(-2500px);
+        }
+    }

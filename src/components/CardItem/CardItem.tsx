@@ -16,10 +16,10 @@ interface CardItemProps {
 export default function CardItem(props: CardItemProps) {
   const boxMouseOverHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     const box: HTMLDivElement = event.currentTarget;
-    box.style.boxShadow = "4px 4px 0px 0px #ffc900";
-    box.style.border = "0px";
+    box.style.boxShadow = "6px 6px 0px 0px #23a094";
     box.style.transform = "translate(-5px, -5px)";
     box.style.transition = ".3s ease-in-out";
+    box.style.borderImageWidth = "0px";
   };
 
   const boxMouseOutHandler = (event: React.MouseEvent<HTMLDivElement>) => {
@@ -27,7 +27,13 @@ export default function CardItem(props: CardItemProps) {
     box.style.transform = "translateY(0px)";
     box.style.transition = ".3s ease-in-out";
     box.style.boxShadow = box.style.outline = "0px 0px 0px 0px white";
-    box.style.border = "1px solid #ff90e8";
+    // box.style.borderImage = `url(${
+    //   process.env.PUBLIC_URL + "/images/bgColor.jpg"
+    // })`;
+    // box.style.borderImageWidth = "auto";
+    // box.style.borderImageRepeat = "stretch";
+    // box.style.borderImageOutset = "1px";
+    // box.style.borderImageSlice = "1";
   };
 
   return (
@@ -36,13 +42,17 @@ export default function CardItem(props: CardItemProps) {
         style={{
           width: "300px",
           height: "480px",
-          backgroundColor: "#151515",
+          backgroundColor: "black",
           color: "white",
           position: "relative",
           display: "flex",
           alignItems: "center",
+          // borderImage: `url(${process.env.PUBLIC_URL + "/images/bgColor.jpg"})`,
           flexDirection: "column",
-          border: "1px solid #ff90e8",
+          // borderImageWidth: "auto",
+          // borderImageRepeat: "stretch",
+          // borderImageOutset: "1px",
+          // borderImageSlice: "5",
         }}
         onMouseEnter={boxMouseOverHandler}
         onMouseLeave={boxMouseOutHandler}
@@ -81,51 +91,6 @@ export default function CardItem(props: CardItemProps) {
             </a>
           </div>
         </Card.Title>
-        {/* <Card.Text
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            height: "55px",
-            width: "100%",
-            fontSize: "13px",
-            // border: "2px solid blue",
-            borderTop: "2px solid white",
-            borderBottom: "2px solid white",
-          }}
-        >
-          <div className="w-1/2 flex flex-col h-full justify-center ml-3 border-white border-r-2 ">
-            <ul className="flex flex-row items-center g-3">
-              <li>
-                <AiFillStar style={{ color: "orange" }} />
-              </li>
-              <li>5.0</li>
-              <li>(392)</li>
-            </ul>
-          </div>
-          <div className="w-40 flex justify-center items-center">
-            <span>{currencyFormat(props.price)}</span>
-          </div>
-        </Card.Text> */}
-        {/* <Card.Text
-          style={{
-            height: "150px",
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <div className="w-5/6 h-2/4 flex text-black ">
-            <button
-              className="w-full h-full rounded-sm"
-              style={{ backgroundColor: "#ff90e8" }}
-            >
-              BUY NOW!
-            </button>
-          </div>
-        </Card.Text> */}
       </Card>
     </>
   );
