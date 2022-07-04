@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages";
 import Banner from "./components/Banner/Banner";
 import Metaverse from "./pages/Metaverse";
+import Tutorials from "./pages/Tutorials";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -18,6 +19,15 @@ function App() {
                 <>
                   <Navbar text="Home" />
                   <Metaverse />
+                </>
+              }
+            />
+            <Route
+              path="/tutorials"
+              element={
+                <>
+                  <Navbar text="Home" />
+                  <Tutorials />
                 </>
               }
             />

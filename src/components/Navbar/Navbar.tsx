@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Offcanvas } from "react-bootstrap";
 import { CgClose } from "react-icons/cg";
+import { AiFillInstagram } from "react-icons/ai";
 import bgColor from "../CommercePlace/bgColor.jpg";
 
 export default function Navbar(props: any) {
@@ -49,7 +50,7 @@ export default function Navbar(props: any) {
         </span>
         <ul className="xl:flex xl:flex-row xl:gap-20 xl:h-full xl:justify-center xl:items-center xl:text-center hidden xl:shrink w-[69%] justify-center">
           <li className="xl:h-full xl:flex xl:items-center hidden">
-            <a href="#ABOUT" className={listSettings}>
+            <a href="/tutorials" className={listSettings}>
               Tutorials
             </a>
           </li>
@@ -72,7 +73,7 @@ export default function Navbar(props: any) {
             </a>
           </li>
           <li className="xl:h-full xl:flex xl:items-center hidden">
-            <a href="#ABOUT" className={listSettings}>
+            <a href="http://192.168.1.103:80" className={listSettings}>
               Discover
             </a>
           </li>
@@ -81,12 +82,12 @@ export default function Navbar(props: any) {
 
       {openButton ? (
         <>
-          <div className="w-[100%] h-[50%] text-white text-[20px] fixed top-16 bg-black transition-all duration-700 z-30"></div>
-          <div className="w-[100%] h-[50%] text-white text-[20px] fixed top-16 bg-black transition-all duration-700 z-30 translate-y-[100%]"></div>
-          <div className="overflow-hidden fixed z-40">
-            <div className="relative w-[100%] min-h-[35vh] top-[70px] bg-gradient-to-b from-black via-black to-transparent z-[45]">
+          <div className="w-[100%] h-[50%] text-white text-[20px] fixed top-16 bg-black transition-all duration-700 z-[44]"></div>
+          <div className="w-[100%] h-[100%] text-white text-[20px] fixed top-16 bg-black transition-all duration-700 z-[44] translate-y-[50%] "></div>
+          <div className="overflow-hidden fixed z-[44] w-[100%]  transition delay-1000 ease-in-out duration-700">
+            <div className="relative w-[100%] min-h-[35vh] top-[30px] bg-gradient-to-b from-black via-black to-transparent z-[45]">
               <button
-                className="top-10 right-10 absolute text-[70px] text-white"
+                className="top-20 right-4 absolute text-[70px] text-white"
                 onClick={() => setOpenButton(!openButton)}
               >
                 <CgClose />
@@ -95,28 +96,18 @@ export default function Navbar(props: any) {
             <section className="star-wars">
               <div className="crawl">
                 <div className="title">
-                  <p>Episode IV</p>
-                  <h1>A New Hope</h1>
+                  <p>Radu Cius</p>
+                  <h1>Environment Artist</h1>
                 </div>
 
                 <div className="description">
-                  <p>
-                    It is a period of civil war. Rebel spaceships, striking from
-                    a hidden base, have won their first victory against the evil
-                    Galactic Empire.
-                  </p>
-
-                  <p>
-                    During the battle, Rebel spies managed to steal secret plans
-                    to the Empire’s ultimate weapon, the DEATH STAR, an armored
-                    space station with enough power to destroy an entire planet.
-                  </p>
-
-                  <p>
-                    Pursued by the Empire’s sinister agents, Princess Leia races
-                    home aboard her starship, custodian of the stolen plans that
-                    can save her people and restore freedom to the galaxy….
-                  </p>
+                  <span className="w-auto">
+                    Experience working with game editors(UE4)(Unity) and Houdini
+                    r&d.
+                  </span>
+                  <span className="flex justify-center text-[200px] ">
+                    <AiFillInstagram className="text-white hover:text-black cursor-pointer" />
+                  </span>
                 </div>
               </div>
             </section>
@@ -124,8 +115,9 @@ export default function Navbar(props: any) {
         </>
       ) : (
         <>
-          <div className="w-[100%] h-[0%] text-white text-[20px] fixed top-16 bg-black transition-all duration-700 z-49"></div>
-          <div className="w-[100%] h-[0%] text-white text-[20px] fixed top-16 bg-black transition-all duration-700 z-49 translate-y-[1300px]"></div>
+          <div className="w-[100%] h-[0%] text-white text-[20px] fixed top-16 bg-black transition-all duration-700 z-30"></div>
+          <div className="w-[100%] h-[0%] text-white text-[20px] fixed top-16 bg-black transition-all duration-700 z-30 translate-y-[1080px]"></div>
+          <div className="overflow-hidden fixed z-[44] h-[0%] transition-all duration-700 translate-y-[1300px]"></div>
         </>
       )}
 

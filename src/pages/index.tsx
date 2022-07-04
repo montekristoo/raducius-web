@@ -2,6 +2,7 @@ import React from "react";
 import CardItem from "../components/CardItem/CardItem";
 import CustomMarquee from "../components/Marquee/Marquee";
 import Navbar from "../components/Navbar/Navbar";
+import { AiFillInstagram } from "react-icons/ai";
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
       <div className="flex w-full h-auto justify-center bg-black z-10 items-center">
         <CustomMarquee />
       </div>
-      <div className="xl:h-[calc(100vh_-_55px)] sm:h-auto flex flex-col justify-center items-center relative z-50 bg-[#ffdd4a]">
+      <div className="xl:h-[calc(100vh_-_20px)] sm:h-auto flex flex-col justify-center items-center relative z-30 bg-[#ffdd4a]">
         <div className="grid xl:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 text-white gap-5 place-content-center place-items-center justify-items-center xl:py-0 xl:pb-0 py-4 pb-4">
           <CardItem
             id={1}
