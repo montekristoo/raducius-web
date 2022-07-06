@@ -8,6 +8,9 @@ module.exports = {
     content: ["./src/**/*.{js,jsx,ts,tsx}"],
     theme: {
         extend: {
+            gridTemplateRows: {
+                9: "repeat(7, minmax(0, 1fr))",
+            },
             width: {
                 navbar: "1850px",
             },

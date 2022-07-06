@@ -6,8 +6,8 @@ export default function TutorialPaper(props: any) {
   return (
     <>
       <div className="xl:h-[calc(100vh_-_64px)] flex flex-col relative z-31 bg-slate-300">
-        <div className="grid grid-cols-2 h-[100%] w-[100%]">
-          <div className="col-span-2 w-[100%] h-[100px] flex justify-center items-center ">
+        <div className="grid xl:grid-cols-2 grid-cols-1 h-[100%] w-[100%]">
+          <div className="xl:col-span-2 w-[100%] h-[100px] flex justify-center items-center ">
             <span className="font-paytone xl:text-[2vw] text-[2rem] text-black text-center leading-10">
               {props.name}
             </span>
@@ -24,7 +24,7 @@ export default function TutorialPaper(props: any) {
             ></iframe>
           </div>
 
-          <div className="col-span-2 w-[100%] flex justify-center items-center relative pb-6">
+          <div className="xl:col-span-2 w-[100%] flex justify-center items-center relative pb-6">
             <Carousel fade>
               {props.photos.map((photo: any) => (
                 <Carousel.Item interval={1500}>
