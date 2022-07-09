@@ -2,38 +2,35 @@ import React, { useRef, useEffect, useState } from "react";
 import CardItem from "../components/CardItem/CardItem";
 import CustomMarquee from "../components/Marquee/Marquee";
 import Navbar from "../components/Navbar/Navbar";
+import data from "../components/CardItem/dataCards";
 
-
-
-
-  let section =
-    "flex flex-row text-white font-trispace bg-transparent z-[5] w-auto xl:h-auto h-[80px] relative before:content-[''] before:flex  before:bg-white before:absolute before:z-[10] before:left-0 before:bottom-[50%] before:w-[100%] before:h-[0px] before:transition-all before:ease-in-out hover:before:bottom-0 hover:before:h-[100%] hover:text-black xl:border-b-[1px] xl:border-white border-b-[1px] border-white";
-  let container =
-    "w-[80%] h-full flex items-center z-[20] hover:text-black hover:translate-x-[20px] transition-all duration-300 ease-in-out";
+let section =
+  "flex flex-row text-white font-trispace bg-transparent z-[5] w-auto xl:h-auto h-[80px] relative before:content-[''] before:flex  before:bg-white before:absolute before:z-[10] before:left-0 before:bottom-[50%] before:w-[100%] before:h-[0px] before:transition-all before:ease-in-out hover:before:bottom-0 hover:before:h-[100%] hover:text-black xl:border-b-[1px] xl:border-white border-b-[1px] border-white";
+let container =
+  "w-[80%] h-full flex items-center z-[20] hover:text-black hover:translate-x-[20px] transition-all duration-300 ease-in-out";
 let mLeft = "ml-9";
-  
-  const sections = [
-    "Work",
-    "About",
-    "Services",
-    "Verticals",
-    "Careers",
-    "Ideas",
-    "News",
-    "Contact",
-  ];
+
+const sections = [
+  "Work",
+  "About",
+  "Services",
+  "Verticals",
+  "Careers",
+  "Ideas",
+  "News",
+  "Contact",
+];
 
 export default function Home() {
   const myRef: any = useRef(null);
   const reff: any = useRef(null);
 
-
   const [dark, setDark] = useState(false);
 
   const onWindowResize = () => {
-    const { top, height } = myRef.current.getBoundingClientRect()
-    console.log("Top - height: " + (top-height));
-    
+    const { top, height } = myRef.current.getBoundingClientRect();
+    console.log("Top - height: " + (top - height));
+
     if (top - height - 55 > 0) {
       setDark(true);
     } else {
@@ -48,9 +45,6 @@ export default function Home() {
       window.removeEventListener("scroll", onWindowResize);
     };
   }, []);
-
-
-
 
   return (
     <>
@@ -70,37 +64,9 @@ export default function Home() {
       </div>
       <div className="min-h-[calc(100vh_-_55px)] flex flex-col justify-center items-center z-30 bg-[#ffdd4a] overflow-hidden">
         <div className="grid xl:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 text-white gap-5 place-content-center place-items-center justify-items-center xl:py-0 xl:pb-0 py-4 pb-4">
-            <CardItem
-              id={1}
-              photo={
-                process.env.PUBLIC_URL +
-                "/images/Procedural Modeling in Houdini 31.jpg"
-              }
-              name="Houdini Tutorial Procedural Modelling [escalator]"
-              adress="https://rart.gumroad.com/l/ProceduralModeling?fbclid=IwAR1yk02iVrxFhDBSu4Ye5ycvPUZQBnOsOzT_zBJIdJid24NRBxi7f4wZ5WQ"
-            />
-  
-            <CardItem
-              id={2}
-              photo={process.env.PUBLIC_URL + "/images/Castle Houdini.jpg"}
-              name="Houdini Tutorial Procedural Japanese Castle in Unreal Engine 4"
-              adress="https://rart.gumroad.com/l/ProceduralCastle?fbclid=IwAR16dl0-svo9D8CsYfeTXfiM9NElHREtMBt8c-kDTtLXHOAjdonp1q7Boyw"
-            />
-
- 
-            <CardItem
-              id={3}
-              photo={process.env.PUBLIC_URL + "/images/ProceduralLevel.png"}
-              name="Houdini Tutorial Procedural Level Design in Unreal Engine 4"
-              adress="https://rart.gumroad.com/l/LVLDesign1?fbclid=IwAR2qhlAjkhN2EHNoNCbZ0YAb6AM8wB4hMOtPEov4Qio-EwyFa614NDfBhAg"
-            />
-      
-            <CardItem
-              id={4}
-              photo={process.env.PUBLIC_URL + "/images/Brush Plant.jpg"}
-              name="Houdini Tutorial Procedural Bush Plant in Unreal Engine 4"
-              adress="https://rart.gumroad.com/l/dCEnaM?fbclid=IwAR2-a1G27LJzoK-T_cU_YIwrJqyuAUKxANJYZYupOE-086JoZYhvqXz815Y"
-            />
+          {data.map((card) => (
+            <CardItem key={card.id} {...card} />
+          ))}
         </div>
       </div>
 
