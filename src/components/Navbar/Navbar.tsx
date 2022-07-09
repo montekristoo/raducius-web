@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Offcanvas } from "react-bootstrap";
 import { CgClose } from "react-icons/cg";
 import { AiFillInstagram } from "react-icons/ai";
 import bgColor from "../CommercePlace/bgColor.jpg";
+import Delayed from "../Delay/Delayed";
 
 export default function Navbar(props: any) {
   let listSettings =
@@ -13,9 +14,25 @@ export default function Navbar(props: any) {
   const [openNav, setOpenNav] = useState(false);
   const [openButton, setOpenButton] = useState(false);
 
+  useEffect(() => {
+    handleButton();
+  }, []);
+
+  console.log("Button: " + openButton);
+
+  if (openButton) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "visible";
+  }
+
+  const handleButton = () => {
+    return setOpenButton((prevOpenButton) => !prevOpenButton);
+  };
+
   return (
     <>
-      <div className="w-[100%] h-16 flex flex-row font-meaven top-0 sticky z-50 bg-white xl:justify-start justify-center">
+      <div className="w-[100%] h-16 flex flex-row font-meaven top-0 sticky z-[53] bg-white xl:justify-start justify-center">
         <video
           src={process.env.PUBLIC_URL + "/images/videoColor.mp4"}
           className="object-cover w-full h-full absolute opacity-25 -z-10 pointer-events-none"
@@ -82,17 +99,19 @@ export default function Navbar(props: any) {
 
       {openButton ? (
         <>
-          <div className="w-[100%] h-[50%] text-white text-[20px] fixed top-16 bg-black transition-all duration-700 z-[44]"></div>
-          <div className="w-[100%] h-[100%] text-white text-[20px] fixed top-16 bg-black transition-all duration-700 z-[44] translate-y-[50%] "></div>
-          <div className="overflow-hidden fixed z-[44] w-[100%]  transition delay-1000 ease-in-out duration-700">
-            <div className="relative w-[100%] min-h-[35vh] top-[30px] bg-gradient-to-b from-black via-black to-transparent z-[45]">
+          <div className="w-[100%] h-[50%] text-white text-[20px] fixed top-[0px] bg-black transition-all duration-700 z-[55]"></div>
+          <div className="bottom-0 h-[50%] w-[100%] text-black bg-black transition-all duration-700 fixed z-[55] "></div>
+          <Delayed>
+            <div className="fixed w-[100%] h-[50vh] top-[0px] bg-gradient-to-b from-black via-black to-transparent z-[150] delay-150 transition-all duration-300 ease-in">
               <button
-                className="top-20 right-4 absolute text-[70px] text-white"
-                onClick={() => setOpenButton(!openButton)}
+                className="top-4 right-4 fixed text-[70px] text-white z-[150] transition-all ease-in duration-150"
+                onClick={handleButton}
               >
                 <CgClose />
               </button>
             </div>
+          </Delayed>
+          <Delayed>
             <section className="star-wars">
               <div className="crawl">
                 <div className="title">
@@ -111,13 +130,12 @@ export default function Navbar(props: any) {
                 </div>
               </div>
             </section>
-          </div>
+          </Delayed>
         </>
       ) : (
         <>
-          <div className="w-[100%] h-[0%] text-white text-[20px] fixed top-16 bg-black transition-all duration-700 z-30"></div>
-          <div className="w-[100%] h-[0%] text-white text-[20px] fixed top-16 bg-black transition-all duration-700 z-30 translate-y-[1080px]"></div>
-          <div className="overflow-hidden fixed z-[44] h-[0%] transition-all duration-700 translate-y-[1300px]"></div>
+          <div className="w-[100%] h-[0%] text-white text-[20px] fixed top-[0px]  bg-black transition-all duration-700 z-[55] "></div>
+          <div className="bg-black fixed z-[55] left-0 bottom-[0%] w-[100%] h-[0%] transition-all duration-700  "></div>
         </>
       )}
 

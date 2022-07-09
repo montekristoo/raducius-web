@@ -12,6 +12,7 @@ export default function CustomMarquee() {
           background: "transparent",
           color: "white",
           fontSize: "70px",
+          overflow: "hidden",
         }}
         gradientWidth={0}
       >

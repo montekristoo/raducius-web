@@ -8,7 +8,7 @@ export default function Banner() {
         <img
           src={process.env.PUBLIC_URL + "/images/bgColor.jpg"}
           alt=""
-          className="object-cover w-full h-full absolute -z-10 opacity-25 pointer-events-none"
+          className="object-cover w-[100%] h-[210px] absolute -z-10 opacity-25 pointer-events-none"
         />
       </div>
     </>
