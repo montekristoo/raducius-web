@@ -6,14 +6,17 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "animate.css/animate.min.css";
+import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <React.StrictMode>
+      <App />
+    </React.StrictMode>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

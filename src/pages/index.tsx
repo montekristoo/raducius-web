@@ -23,13 +23,11 @@ const sections = [
 
 export default function Home() {
   const myRef: any = useRef(null);
-  const reff: any = useRef(null);
 
   const [dark, setDark] = useState(false);
 
   const onWindowResize = () => {
     const { top, height } = myRef.current.getBoundingClientRect();
-    console.log("Top - height: " + (top - height));
 
     if (top - height - 55 > 0) {
       setDark(true);

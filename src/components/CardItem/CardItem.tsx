@@ -71,7 +71,7 @@ export default function CardItem(props: CardItemProps) {
           onMouseLeave={boxMouseOutHandler}
         >
           <Card.Img
-            src={props.photo}
+            src={process.env.PUBLIC_URL + props.photo}
             style={{
               height: "auto",
               width: "auto",
