@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.e7905eba.css",
-    "main.js": "/static/js/main.8eee1794.js",
+    "main.js": "/static/js/main.2c761e69.js",
     "static/js/787.b7bb84a6.chunk.js": "/static/js/787.b7bb84a6.chunk.js",
     "static/media/Montserrat-Bold.ttf": "/static/media/Montserrat-Bold.63fae500fdcf19ce83d4.ttf",
     "static/media/PaytoneOne-Regular.ttf": "/static/media/PaytoneOne-Regular.cbe5045121f3f8167fb4.ttf",
@@ -10,11 +10,11 @@
     "static/media/MavenPro-Regular.ttf": "/static/media/MavenPro-Regular.7ee42b4dd2b97ab637f0.ttf",
     "index.html": "/index.html",
     "main.e7905eba.css.map": "/static/css/main.e7905eba.css.map",
-    "main.8eee1794.js.map": "/static/js/main.8eee1794.js.map",
+    "main.2c761e69.js.map": "/static/js/main.2c761e69.js.map",
     "787.b7bb84a6.chunk.js.map": "/static/js/787.b7bb84a6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e7905eba.css",
-    "static/js/main.8eee1794.js"
+    "static/js/main.2c761e69.js"
   ]
 }
