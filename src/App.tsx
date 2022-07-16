@@ -16,7 +16,7 @@ function App() {
         <Router>
           <Routes>
             <Route
-              path="/{app.name}"
+              path="/raduciusWEB"
               element={
                 <>
                   <Banner />
